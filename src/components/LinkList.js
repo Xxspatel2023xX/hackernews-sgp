@@ -17,6 +17,7 @@ export const FEED_QUERY = gql`
         url
         description
         postedBy {
+          group
           id
           name
         }
@@ -24,6 +25,7 @@ export const FEED_QUERY = gql`
           id
           user {
             id
+            name
           }
         }
         createdAt
