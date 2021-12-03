@@ -25,6 +25,8 @@ model User {
   group    Int @default(1)
   links    Link[]
   votes    Vote[]
+  hobby    String @default("coding")
+
 }
 
 model Vote {

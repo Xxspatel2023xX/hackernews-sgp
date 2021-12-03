@@ -41,6 +41,8 @@ type User {
   email: String!
   links: [Link!]!
   group: Int
+  hobby: String
+
 }
 
 type Link {
@@ -50,6 +52,7 @@ type Link {
   postedBy: User
   votes: [Vote!]!
   createdAt: DateTime!
+
 }
 
 type Vote {
