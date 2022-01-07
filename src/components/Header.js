@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { withRouter } from 'react-router'
 import { AUTH_TOKEN } from '../constants'
+import 
 
 class Header extends Component {
   render() {
@@ -16,6 +17,10 @@ class Header extends Component {
   <div className="ml1">|</div>
   <Link to="/top" className="ml1 no-underline black">
   top
+</Link>
+  <div className="ml1">|</div>
+  <Link to="/FilterList" className="ml1 no-underline black">
+  filter
 </Link>
 <div className="ml1">|</div>
   <Link to="/search" className="ml1 no-underline black">

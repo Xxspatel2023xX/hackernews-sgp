@@ -6,8 +6,9 @@ function post(parent, args, context, info) {
   const { userId } = context;
 
   const newLink = context.prisma.link.create({
-    data: {
+    data: { 
       url: args.url,
+      tag: args.tag,
       description: args.description,
       postedBy: { connect: { id: userId } }
     }

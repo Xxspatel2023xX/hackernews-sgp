@@ -5,7 +5,7 @@ import gql from 'graphql-tag'
 
 const SIGNUP_MUTATION = gql`
   mutation SignupMutation($email: String!, $password: String!, $name: String!) {
-    signup(email: $email, password: $password, name: $name) {
+    signup(email: $email, password: $password, name: $name,) {
       token
     }
   }
@@ -27,7 +27,7 @@ class Login extends Component {
   }
 
   render() {
-    const { login, email, password, name } = this.state
+    const { login, email, password, name, } = this.state
     return (
       <div>
         <h4 className="mv3">{login ? 'Login' : 'Sign Up'}</h4>
@@ -38,6 +38,7 @@ class Login extends Component {
               onChange={e => this.setState({ name: e.target.value })}
               type="text"
               placeholder="Your name"
+      
             />
           )}
           <input
@@ -52,6 +53,7 @@ class Login extends Component {
             type="password"
             placeholder="Choose a safe password"
           />
+      
         </div>
         <div className="flex mt3">
   <Mutation

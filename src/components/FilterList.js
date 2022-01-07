@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from './Link'
+import Link2 from './Link2'
 import { useQuery } from 'react-apollo'
 import { useHistory } from 'react-router';
 import gql from 'graphql-tag'
@@ -23,15 +23,15 @@ export const FEED_QUERY = gql`
           name
         }
         votes {
-          id
-          user {
+            id
+             user {
             id
             name
-          }
+            }
         }
         createdAt
-      }
-      count
+        }
+         count
     }
   }
 `;
@@ -54,7 +54,7 @@ const getQueryVariables = (isNewPage, page) => {
   return { take, skip, orderBy };
 };
 
-const LinkList = () => {
+const FilterList = () => {
   const history = useHistory();
   const isNewPage = history.location.pathname.includes(
     'new'
@@ -85,7 +85,7 @@ const LinkList = () => {
         <>
           {getLinksToRender(isNewPage, data).map(
             (link, index) => (
-              <Link
+              <Link2
                 key={link.id}
                 link={link}
                 index={index + pageIndex}
@@ -126,4 +126,4 @@ const LinkList = () => {
   );
 };
 
-export default LinkList;
+export default FilterList;

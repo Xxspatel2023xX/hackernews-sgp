@@ -15,7 +15,7 @@ type Feed {
 }
 
 type Mutation {
-  post(url: String!, description: String!): Link!
+  post(url: String!, description: String!, tag:String!): Link!
   signup(
     email: String!
     password: String!
@@ -40,9 +40,6 @@ type User {
   name: String!
   email: String!
   links: [Link!]!
-  group: Int
-  hobby: String
-
 }
 
 type Link {
@@ -52,6 +49,8 @@ type Link {
   postedBy: User
   votes: [Vote!]!
   createdAt: DateTime!
+  tag: String!
+  
 
 }
 
